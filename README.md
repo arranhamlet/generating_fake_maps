@@ -1,2 +1,3 @@
-# generating_fake_maps
-A way of generating fake maps using rasters
+# Generating fake maps using raster
+
+A way of generating fake maps using rasters. Produces shapefiles from various different starting conditions and expansions.
