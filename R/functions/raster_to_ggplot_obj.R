@@ -1,5 +1,5 @@
 
-raster_to_ggplot_obj <- function(raster_file){
+raster_to_ggplot_obj <- function(raster_file, data){
 
   rastpol <- rasterToPolygons(raster_file, dissolve = T)
   levels <- levels(raster_file)[[1]]
@@ -13,9 +13,10 @@ raster_to_ggplot_obj <- function(raster_file){
   rastpol_fort_data <- left_join(rastpol_fort,
                                  as.data.frame(rastpol),
                                  by = "id") %>%
-    rename("numeric_value" = layer,
-           "letter_value" = VALUE)
+    rename("numeric_value" = layer)
 
-  rastpol_fort_data
+  map_ggplot_obj_data <- left_join(rastpol_fort_data,
+                                   data,
+                                   by = "id")
 
 }

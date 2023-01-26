@@ -1,15 +1,14 @@
-#
-random_map_maker <- function(seed = 1,
-                             mapcol = 100,
-                             maprow = 100,
-                             nstart = 10,
-                             ncat = 5,
-                             catweight = 1,
-                             nrun = 100,
-                             nsample = 10,
-                             direction = 8,
-                             replace = T,
-                             slowmo = F){
+random_map_maker <- function(seed = 1,           #The seed for your random number generation
+                             mapcol = 100,       #The number of columns
+                             maprow = 100,       #The number of rows
+                             nstart = 10,        #How many starting points you want
+                             ncat = 5,           #How many categories you want
+                             catweight = 1,      #The weight of the categories, accepts a vector the same length as ncat
+                             nrun = 100,         #The number of iterations of sampling
+                             nsample = 10,       #How many samples you want per run
+                             direction = 4,      #What direction do you want the sampling to move? Chess movement, 4 = king, 8 = queen, 16 = Knight +  one cell queen moves
+                             replace = F,        #Do you want the categories to be able to replace each other? Makes more jagged maps if set to T
+                             slowmo = F){        #Do you want each sample to be plotted, accepts F for no or time in seconds
 
 
   #Generate the base vaue raster
